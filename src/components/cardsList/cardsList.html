@@ -1,0 +1,7 @@
+<todo ng-repeat="cardItem in $ctrl.cardsList track by cardItem.id" card='cardItem' delete-card='$ctrl.deleteCard(cardItem.id)'  class="animated fadeInDownBig">
+</todo>
+<div class="row">
+	<div class="col-md-4" ng-show="$ctrl.addBtnShow">
+		<button class="btn btn-primary" ng-click="$ctrl.addCard($index)">Add ToDo List</button>
+	</div>
+</div>

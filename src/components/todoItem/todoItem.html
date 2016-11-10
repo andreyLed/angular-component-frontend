@@ -1,0 +1,7 @@
+<label ng-hide="$ctrl.item.$edit">
+  <input type="checkbox" ng-click="$ctrl.isComplete()"  ng-checked="$ctrl.item.isComplete"> 
+  <span ng-bind="$ctrl.item.title" ng-class="{completed: $ctrl.item.isComplete}"></span>
+</label>
+<input type="text" class="form-control" ng-model="$ctrl.item.title" ng-show="$ctrl.item.$edit" ng-blur="$ctrl.editItem()" focus-me="$ctrl.item.$edit">
+<button class="btn btn-danger pull-right" ng-click="$ctrl.removeItem()" ng-hide="$ctrl.item.$edit">X</button>
+<button class="btn btn-info pull-right" ng-click="$ctrl.item.$edit = true" ng-hide="$ctrl.item.$edit">Edit</button>

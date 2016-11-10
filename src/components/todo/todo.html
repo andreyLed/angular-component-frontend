@@ -1,0 +1,27 @@
+<div class="col-md-4">
+	<div class="panel panel-default panel-success " ng-class="{opacity: $ctrl.card.allComplete}">
+		<div class="panel-heading" ng-style="{background: $ctrl.card.background}">
+			<button class="pull-right fa fa-times header-button" ng-click="$ctrl.deleteCard()"></button>
+			<div class="dropdown pull-right ">
+				<button class="fa fa-filter header-button"></button>
+				<div class="dropdown-content">
+					<a href="#" ng-repeat="color in $ctrl.CardsListService.templates.color" ng-style="{background: color}" ng-click="$ctrl.editHeader(color)"></a>
+				</div>
+			</div>
+			<h3 class="panel-title" ng-bind="$ctrl.card.title"></h3>
+		</div>
+		<div class="panel-body">
+			<ul class="list-group">
+				<todo-item class="list-group-item" ng-repeat="todoItem in $ctrl.card.todos track by $index" item='todoItem' remove-item='$ctrl.removeItem($index)'
+					edit-item='$ctrl.editItem(todoItem)' is-complete="$ctrl.isComplete(todoItem)">
+				</todo-item>
+			</ul>
+		</div>
+		<div class="panel-footer">
+			<div class="footer-wrapper">
+				<input type="text" class="form-control footer-input" ng-model="$ctrl.todoText" placeholder="Add todo">
+				<button class="btn text-right btn-success" ng-click="$ctrl.addItem()">Add</button>
+			</div>
+		</div>
+	</div>
+</div>
